@@ -26,7 +26,7 @@
       //copy the name of your google-auth enabled stitch application here
       //the name of the app will typically be the stitch application name
       //with a "-"" + random string appended
-      const appId = 'authentication_test-htbrq';
+      const appId = 'testauth-gelqb';
 
       // Get a client for your Stitch app, or instantiate a new one
       const client = Stitch.hasAppClient(appId)
@@ -44,8 +44,8 @@
 
       if (client.auth.isLoggedIn) {
         // The user is logged in. Add their user object to component state.
-        currentUser = client.auth.user;
-        this.setState({ currentUser });
+        var cu = client.auth.user;
+        this.setState({ currentUser: cu});
       } else {
         // The user has not yet authenticated. Begin the Google login flow.
         const credential = new GoogleRedirectCredential();
